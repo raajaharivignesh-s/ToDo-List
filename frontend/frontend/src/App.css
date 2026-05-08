@@ -1,8 +1,10 @@
 .app {
   max-width: 600px;
-  margin: 0 auto;
+  margin-top: 250px;
+  margin-left: 200px;
   padding: 20px;
   font-family: Arial, sans-serif;
+  align-content: center;
   background-color: #ddd;
 }
 
@@ -47,7 +49,7 @@ h1 {
   display: flex;
   align-items: center;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #000;
   border-radius: 4px;
   margin-bottom: 10px;
   background-color: #f9f9f9;
@@ -81,9 +83,9 @@ h1 {
 }
 
 .login-container {
-  max-width: 400px;
+  max-width: 500px;
   margin: 100px auto;
-  padding: 20px;
+  padding: 35px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #f9f9f9;
@@ -105,7 +107,7 @@ h1 {
 }
 
 .form-group input {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -119,12 +121,13 @@ h1 {
 
 .login-form button {
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #4c5baf;
   color: white;
   border: none;
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
+  margin-top : 20px;
 }
 
 .login-form button:hover {
