@@ -5,7 +5,7 @@
   color: #0f172a;
 }
 
-* {
+*{
   box-sizing: border-box;
 }
 
@@ -13,17 +13,17 @@ html,
 body {
   margin: 0px;
   min-height: 100%;
-
+  
 }
 
 body {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
+  max-height: fit-content;
   padding: 40px 24px;
   background: linear-gradient(180deg, #eef2ff 0%, #f5f5ff 100%);
-  margin-left: 200px;
+  margin-left: 120px;
+
 }
 
 button {

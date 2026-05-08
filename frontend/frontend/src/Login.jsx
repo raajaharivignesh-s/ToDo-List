@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import './App.css'
+import './App.css'  
 
 function Login() {
   const [email, setEmail] = useState('')
@@ -38,8 +38,7 @@ function Login() {
     <main className="page shell login-page">
       <div className="login-hero">
         <span className="eyebrow">Welcome Back</span>
-        <h1>Access Your Tasks</h1>
-        <p>Sign in to your account to manage your daily tasks and stay productive.</p>
+        <p>Sign in to your account</p>
       </div>
 
       <form onSubmit={handleSubmit} className="login-form">
