@@ -4,8 +4,10 @@ from typing import List, Optional
 
 router = APIRouter(prefix="/todos", tags=["todos"])
 
+todos = []  # In-memory storage for todos
+
 class Todo(BaseModel):
-    id: int
+    id: Optional[int] = None
     title: str
     description: Optional[str] = None
     completed: bool = False
@@ -23,7 +25,8 @@ async def get_todo(todo_id: int):
 
 @router.post("/", response_model=Todo)
 async def create_todo(todo: Todo):
-    new_todo = todo.dict()
+    new_id = max([t["id"] for t in todos] + [0]) + 1
+    new_todo = {"id": new_id, "title": todo.title, "description": todo.description, "completed": todo.completed}
     todos.append(new_todo)
     return new_todo
 
@@ -33,7 +36,7 @@ async def update_todo(todo_id: int, updated_todo: Todo):
         if todo["id"] == todo_id:
             todos[index] = updated_todo.dict()
             return todos[index]
-    raise HTTPException(status_code=404, detail="Todo not found")
+    raise HTTPException(status_code=404, detail="Todo list not found")
 
 @router.delete("/{todo_id}")
 async def delete_todo(todo_id: int):
@@ -41,7 +44,7 @@ async def delete_todo(todo_id: int):
     initial_length = len(todos)
     todos = [todo for todo in todos if todo["id"] != todo_id]
     if len(todos) == initial_length:
-        raise HTTPException(status_code=404, detail="Todo not found")
+        raise HTTPException(status_code=404, detail="Todo list not found")
     return {"message": "Todo deleted successfully"}
 
 

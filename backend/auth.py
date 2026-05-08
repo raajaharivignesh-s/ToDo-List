@@ -21,5 +21,5 @@ async def login(credentials: LoginRequest):
     
     raise HTTPException(
         status_code=401, 
-        detail="Invalid email or password"
+        detail="Invalid email or password. Please check your credentials and try again"
     )
